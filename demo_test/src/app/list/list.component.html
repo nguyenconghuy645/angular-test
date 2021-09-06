@@ -1,0 +1,24 @@
+<h4>Có {{ books.length }} cuốn sách.</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books ">
+      <th scope="row">{{ book.id }}</th>
+      <td><a routerLink="/view/{{ book.id }}">{{ book.title }}</a></td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.description }}</td>
+      <td>
+        <button routerLink="/edit/{{ book.id }}" class="btn btn-primary">Edit</button> |
+        <button routerLink="/delete/{{ book.id }}" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
